@@ -1,0 +1,70 @@
+{
+  "$schema": "https://stitch.google.com/schemas/v1/config.json",
+  "project": "Cartório do Amor",
+  "designSystem": "Romantic Editorial Certificate Suite",
+  "version": "1.0.0",
+  "integration": {
+    "engine": "Antigravity",
+    "provider": "Google Stitch SDK",
+    "mode": "bi-directional-sync",
+    "status": "connected"
+  },
+  "tokens": {
+    "colors": {
+      "wine-rich": "#72092C",
+      "wine-deep": "#5B0723",
+      "wine-crimson": "#8B1E3F",
+      "gold-accent": "#C5A059",
+      "gold-bright": "#D4AF37",
+      "gold-light": "#F5EEDC",
+      "parchment-base": "#FDFBF7",
+      "parchment-subtle": "#FCF9F2",
+      "blush-surface": "#FDF8F7",
+      "blush-tint": "#FFF0F3",
+      "ink-charcoal": "#1C1917",
+      "ink-muted": "#57534E",
+      "ink-faint": "#A8A29E",
+      "border-romantic": "#EFE5DF",
+      "border-gold": "#E5D2A8"
+    },
+    "typography": {
+      "display": "Playfair Display",
+      "body": "Plus Jakarta Sans",
+      "script": "Great Vibes"
+    }
+  },
+  "componentMappings": {
+    "Header": {
+      "source": "src/components/Header.tsx",
+      "stitchTemplateTarget": "header.fixed",
+      "description": "Notary header with official registry seal, pill navigation and session actions"
+    },
+    "PreviewPanel": {
+      "source": "src/components/PreviewPanel.tsx",
+      "stitchTemplateTarget": "workbench.top-bar + canvas.stage",
+      "description": "Interactive document selector, zoom control bar and responsive live canvas"
+    },
+    "ActionToolbar": {
+      "source": "src/components/ActionToolbar.tsx",
+      "stitchTemplateTarget": "workbench.action-buttons",
+      "description": "Export pills (PDF, PNG, Print, Share, Web VIP)"
+    },
+    "EditorForm": {
+      "source": "src/components/EditorForm.tsx",
+      "stitchTemplateTarget": "wizard.navigation + form.container",
+      "description": "Form configurator with step wizard pills, love counter pill and LGPD security card"
+    },
+    "CertificateDocument": {
+      "source": "src/components/CertificateDocument.tsx",
+      "stitchTemplateTarget": "certificate.archival-doc",
+      "description": "High-fidelity romantic certificate with corner filigrees, coat of arms and wax seal"
+    }
+  },
+  "templates": [
+    {
+      "id": "romantic-editorial",
+      "path": "stitch-templates/romantic-editorial.html",
+      "preview": "stitch-templates/screen.png"
+    }
+  ]
+}

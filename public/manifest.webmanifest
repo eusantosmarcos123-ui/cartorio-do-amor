@@ -1,0 +1,84 @@
+{
+  "id": "/",
+  "name": "Cartório do Amor - Certidão Oficial de Relacionamento",
+  "short_name": "Cartório do Amor",
+  "description": "Crie, personalize e eternize sua certidão oficial de namoro com votos poéticos, QR Code exclusivo e download em alta resolução.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#fdfbf7",
+  "theme_color": "#72092c",
+  "orientation": "any",
+  "categories": [
+    "lifestyle",
+    "entertainment",
+    "social",
+    "utilities"
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nova Certidão",
+      "short_name": "Criar",
+      "description": "Começar uma nova certidão oficial de namoro",
+      "url": "/?action=new",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Gerador de Votos IA",
+      "short_name": "Votos IA",
+      "description": "Inspirar votos poéticos de amor",
+      "url": "/?action=ai",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

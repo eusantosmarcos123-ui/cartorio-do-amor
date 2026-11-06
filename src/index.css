@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 114 9 44; /* #72092c */
+    --accent: 197 160 89; /* #c5a059 */
+    --surface: 250 248 245; /* #faf8f5 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(114, 9, 44, 0.2);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(114, 9, 44, 0.4);
+  }
+}
+
+/* Print specific rules: isolates certificate document and hides entire web interface */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0mm;
+  }
+  
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: hidden !important;
+  }
+
+  /* Hide app navigation, form editor, mobile bar, modals, toasts, banners */
+  body > div > header,
+  nav,
+  main,
+  aside,
+  form,
+  button,
+  .no-print,
+  .toast-container,
+  .mobile-bottom-bar,
+  .pwa-banner,
+  .preview-toolbar {
+    display: none !important;
+  }
+
+  /* Expose only the dedicated print portal container */
+  #certificate-print-portal {
+    display: block !important;
+    visibility: visible !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 9999999 !important;
+    background: transparent !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  #certificate-print-portal #certificate-document {
+    display: flex !important;
+    visibility: visible !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Guarantee certificate header and all inner parts are 100% visible */
+  #certificate-print-portal #certificate-document *,
+  #certificate-document *,
+  .certificate-header,
+  .certificate-header * {
+    visibility: visible !important;
+  }
+
+  #certificate-print-portal #certificate-document .certificate-header,
+  #certificate-document .certificate-header {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Ornamental vintage certificate styles */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #a67c2e 0%, #c5a059 40%, #edd8a6 60%, #9a7936 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #c5a059, #f0dfb3, #c5a059) 1;
+}
+
+.wax-seal-shadow {
+  box-shadow: 
+    0 10px 25px -5px rgba(114, 9, 44, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
